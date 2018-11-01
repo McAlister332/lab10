@@ -33,7 +33,11 @@ public int factorial(int value)
        * This lets our recursion know when to stop.
        */
 
-	//TODO
+	if (value == 1)
+	{
+		return 1;
+	}
+    
 
 
       /*
@@ -44,7 +48,10 @@ public int factorial(int value)
        * By doing this, we break up the equation n! into n! = n * (n-1)!.
        */
 
-	//TODO
+       else
+       {
+    	   return value * factorial(value - 1);
+       }
 
 }
 
@@ -66,11 +73,21 @@ public int factorial(int value)
      */
 public int fibonacci(int n)
 {
-
-
-	//TODO
-
-
+    int num = 0;
+	if (n == 1)
+	{
+		return 1;
+	}
+	else if (n == 2)
+	{
+		return 1;
+	}
+	else
+	{
+		return fibonacci(n - 1) + fibonacci(n - 2);
+	}
+   
+}
     
     /**
      * Class that represents a tree. This is a data structure comprised of several nodes. Each node may
@@ -93,8 +110,6 @@ public int fibonacci(int n)
      * @author Stephen
      * @version 2018-04-23
      */
-     
-}
 protected final class Tree
 {
     private ArrayList<Tree> children;
@@ -145,11 +160,21 @@ protected final class Tree
      */
 public int nnaryTreeSize(int branchingFactor, int height)
 {
+    	 
+    int sum = branchingFactor;
+    
     if (height == 1) 
     {
-	//TODO
+	   
+    	return sum;
+    	
     }
-	//TODO
+    else
+    {
+    	sum += nnaryTreeSize(branchingFactor, height - 1);
+    	return sum;
+    }
+	
 }
 
     /**
